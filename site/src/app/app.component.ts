@@ -1,3 +1,4 @@
+import { InputSearchData } from './models/input-search-data.model';
 import { Component } from '@angular/core';
 import { AppData } from './models/app-data.model';
 import { ContactFormData } from './models/contact-form-data.model';
@@ -12,7 +13,7 @@ export class AppComponent {
   public data: AppData = {
     features: {
       sectionTitle: 'Destaques',
-      feature1: {
+      feature1: { 
         image: 'feature1.png',
         title: 'Destaque 1',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dolor arcu, malesuada eget posuere et.'
@@ -55,8 +56,33 @@ export class AppComponent {
     console.log('Elemento criado:', element);
   }
 
+  onFeatureCreated(element: string): void {
+    console.log('Feature criada:', element);
+  }
+
+  onAddressCreated(element: string): void {
+    console.log('Address criada:', element);
+  }
+
+  
+  onCarouselCreated(element: string): void {
+    console.log('Carousel criada:', element);
+  }
+
+  onFooterCreated(element: string): void {
+    console.log('Footer criada:', element);
+  }
+
+  onHeaderCreated(element: string): void {
+    console.log('Header criada:', element);
+  }
+
   onContactFormSubmitted(formData: ContactFormData): void {
     console.log("Formulário enviado com sucesso!", formData);
+  }
+
+  onSearchSubmitted(searchData: InputSearchData): void { 
+    console.log(searchData.inputSearch);
   }
 
 }
